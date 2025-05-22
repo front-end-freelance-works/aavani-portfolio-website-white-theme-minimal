@@ -52,6 +52,8 @@
 
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
                     // Remove active class from all tabs and panes
                     tabs.forEach(t => t.classList.remove('bg-gray-500', 'text-white'));
                     tabs.forEach(t => t.classList.add('bg-gray-200', 'text-dark'));
@@ -92,3 +94,23 @@
             setupTabs();
             setupSmoothScrolling();
         });
+
+        // scroll top
+        // Get the button
+    let scrollTopBtn = document.querySelector(".scroll-to-top-btn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollTopBtn.style.display = "flex";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }

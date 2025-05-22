@@ -77,7 +77,7 @@ function renderWorkElement(categ){
         // set work item element
         createWorkElement(i);
         if(categ === 'portrait'){
-            console.log('portraitWorks', portraitsWorksTabEl);   
+            // console.log('portraitWorks', portraitsWorksTabEl);   
 
             portraitsWorksTabEl.insertAdjacentHTML('beforeend', newWorkElementHTML);
         }else if(categ === 'eyes'){
